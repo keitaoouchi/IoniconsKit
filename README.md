@@ -9,6 +9,19 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+### Ionicons as UILabel
+
+```swift
+someLabel.font = UIFont.ionicon(of: 18)
+someLabel.text = String.iconicon(with: .socialTwitter)
+```
+
+### Ionicons as UIImage
+
+```swift
+someImageView.image = UIImage.ionicon(with: .socialFacebook, textColor: UIColor.orange, size: CGSize(width: 18, height: 18))
+```
+
 ## Requirements
 
 iOS 8 or later.
