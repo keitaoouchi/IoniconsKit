@@ -1,6 +1,6 @@
 # IoniconsKit
 
-[![CI Status](http://img.shields.io/travis/keita.oouchi/IoniconsKit.svg?style=flat)](https://travis-ci.org/keita.oouchi/IoniconsKit)
+[![CI Status](http://img.shields.io/travis/keitaoouchi/IoniconsKit.svg?style=flat)](https://travis-ci.org/keita.oouchi/IoniconsKit)
 [![Version](https://img.shields.io/cocoapods/v/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![License](https://img.shields.io/cocoapods/l/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![Platform](https://img.shields.io/cocoapods/p/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
