@@ -1,9 +1,12 @@
 # IoniconsKit
 
 [![CI Status](http://img.shields.io/travis/keitaoouchi/IoniconsKit.svg?style=flat)](https://travis-ci.org/keita.oouchi/IoniconsKit)
+[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://swift.org/)
 [![Version](https://img.shields.io/cocoapods/v/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![License](https://img.shields.io/cocoapods/l/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![Platform](https://img.shields.io/cocoapods/p/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
+
+<img src="https://raw.githubusercontent.com/keitaoouchi/IoniconsKit/master/Screenshots/sample.png" width="320px" />
 
 ## Example
 
@@ -24,6 +27,8 @@ someImageView.image = UIImage.ionicon(with: .socialFacebook, textColor: UIColor.
 
 For another icons, plaease see the [source](https://github.com/keitaoouchi/IoniconsKit/blob/master/IoniconsKit/Classes/Ionicons.swift),
 or build Example App.
+
+
 
 ## Requirements
 
