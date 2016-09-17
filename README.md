@@ -22,6 +22,9 @@ someLabel.text = String.iconicon(with: .socialTwitter)
 someImageView.image = UIImage.ionicon(with: .socialFacebook, textColor: UIColor.orange, size: CGSize(width: 18, height: 18))
 ```
 
+For another icons, plaease see the [source](https://github.com/keitaoouchi/IoniconsKit/blob/master/IoniconsKit/Classes/Ionicons.swift),
+or build Example App.
+
 ## Requirements
 
 iOS 8 or later.
