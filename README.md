@@ -19,7 +19,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ```swift
 someLabel.font = UIFont.ionicon(of: 18)
-someLabel.text = String.iconicon(with: .socialTwitter)
+someLabel.text = String.ionicon(with: .socialTwitter)
 ```
 
 ### Ionicons as UIImage
