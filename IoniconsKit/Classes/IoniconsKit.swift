@@ -47,7 +47,7 @@ public extension UIImage {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = NSTextAlignment.center
         let fontSize = min(size.width, size.height)
-        let attributedString = NSAttributedString(string: String.ionicon(with: name), attributes: [NSFontAttributeName: UIFont.ionicon(of: fontSize), NSForegroundColorAttributeName: textColor, NSBackgroundColorAttributeName: backgroundColor, NSParagraphStyleAttributeName: paragraph])
+        let attributedString = NSAttributedString(string: String.ionicon(with: name), attributes: [NSAttributedStringKey.font: UIFont.ionicon(of: fontSize), NSAttributedStringKey.foregroundColor: textColor, NSAttributedStringKey.backgroundColor: backgroundColor, NSAttributedStringKey.paragraphStyle: paragraph])
         UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
         attributedString.draw(in: CGRect(x: 0, y: (size.height - fontSize) / 2, width: size.width, height: fontSize))
         let image = UIGraphicsGetImageFromCurrentImageContext()
@@ -71,10 +71,11 @@ private class FontLoader {
             fontURL = bundle.url(forResource: name, withExtension: "ttf")!
         }
 
-        let data = try! Data(contentsOf: fontURL)
-
-        let provider = CGDataProvider(data: data as CFData)
-        let font = CGFont(provider!)
+        guard
+            let data = try? Data(contentsOf: fontURL),
+            let provider = CGDataProvider(data: data as CFData),
+            let font = CGFont(provider)
+        else {return}
 
         var error: Unmanaged<CFError>?
         if !CTFontManagerRegisterGraphicsFont(font, &error) {
