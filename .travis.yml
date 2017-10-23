@@ -1,4 +1,4 @@
-osx_image: xcode8
+osx_image: xcode9
 language: objective-c
 before_install:
   - brew update
@@ -6,6 +6,6 @@ before_install:
 install:
   - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
 script:
-  - set -o pipefail && xcodebuild build -workspace Example/IoniconsKit.xcworkspace -scheme IoniconsKit-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty -c
+  - set -o pipefail && cd Example && bundle install && bundle exec pod install && cd ../ && xcodebuild build -workspace Example/IoniconsKit.xcworkspace -scheme IoniconsKit-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=YES | xcpretty -c
   - pod lib lint --quick
   - carthage build --platform iOS --no-skip-current

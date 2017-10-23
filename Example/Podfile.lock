@@ -1,5 +1,5 @@
 PODS:
-  - IoniconsKit (0.1.0)
+  - IoniconsKit (1.0.0)
 
 DEPENDENCIES:
   - IoniconsKit (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  IoniconsKit: beecaab8b8b907c87945aa7e9d1eb24452b15ddd
+  IoniconsKit: 9681ab96fdfdaf6b7fb4f338aa810f899d83491f
 
-PODFILE CHECKSUM: 32f5d873384b562c05a1937d0e277305c2cc3c89
+PODFILE CHECKSUM: c93d57d865a020c9320387d02bb3b04815c84951
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.1
