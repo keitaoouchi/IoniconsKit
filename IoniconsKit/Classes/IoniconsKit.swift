@@ -28,7 +28,7 @@ public extension String {
   /// - parameter name: The preferred icon name.
   /// - returns: A string that will appear as icon with Ionicons.
   public static func ionicon(with name: Ionicons) -> String {
-    let substr = name.rawValue[..<name.rawValue.characters.index(name.rawValue.startIndex, offsetBy: 1)]
+    let substr = name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)]
     return String(substr)
 
   }
