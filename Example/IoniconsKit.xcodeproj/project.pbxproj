@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C62ABE885BF242AAB58D690 /* libPods-IoniconsKit_Example.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D53428A01AD7379D18694967 /* libPods-IoniconsKit_Example.a */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		8A75529EFA771B59D28C32A3 /* Pods_IoniconsKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0020D6523866DB0E2C940323 /* Pods_IoniconsKit_Example.framework */; };
 		DE157C7D1D8CF24A003C841F /* IoniconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C7C1D8CF24A003C841F /* IoniconsTableViewController.swift */; };
 		DE157C7F1D8CF267003C841F /* IoniconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C7E1D8CF267003C841F /* IoniconTableViewCell.swift */; };
 		DE157C851D8D0170003C841F /* Ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C841D8D0170003C841F /* Ionicons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0020D6523866DB0E2C940323 /* Pods_IoniconsKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IoniconsKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		160E1A4CC2986DF24914647E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		579B2CB93371F5D58B1E306B /* Pods-IoniconsKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoniconsKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* IoniconsKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IoniconsKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +27,7 @@
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B7C9DC051E83D950525F3CC6 /* IoniconsKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IoniconsKit.podspec; path = ../IoniconsKit.podspec; sourceTree = "<group>"; };
+		D53428A01AD7379D18694967 /* libPods-IoniconsKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IoniconsKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA273FDEB5111C9963CA02F8 /* Pods-IoniconsKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoniconsKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE157C7C1D8CF24A003C841F /* IoniconsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoniconsTableViewController.swift; sourceTree = "<group>"; };
 		DE157C7E1D8CF267003C841F /* IoniconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoniconTableViewCell.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A75529EFA771B59D28C32A3 /* Pods_IoniconsKit_Example.framework in Frameworks */,
+				4C62ABE885BF242AAB58D690 /* libPods-IoniconsKit_Example.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,7 +112,7 @@
 		75DD6648788B6CD452C3BDF8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0020D6523866DB0E2C940323 /* Pods_IoniconsKit_Example.framework */,
+				D53428A01AD7379D18694967 /* libPods-IoniconsKit_Example.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -128,7 +128,6 @@
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				6D941CD4325711DA670A0FB3 /* [CP] Embed Pods Frameworks */,
 				6536155887943D39FD6E4EE4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
@@ -195,31 +194,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/IoniconsKit/IoniconsKit.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IoniconsKit.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6D941CD4325711DA670A0FB3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/IoniconsKit/IoniconsKit.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IoniconsKit.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DFF1F0952DBF4FFD623999FF /* [CP] Check Pods Manifest.lock */ = {
@@ -237,7 +221,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
