@@ -56,10 +56,10 @@ public extension UIImage {
     let attributedString = NSAttributedString(
       string: String.ionicon(with: name),
       attributes: [
-        NSAttributedStringKey.font: UIFont.ionicon(of: fontSize),
-        NSAttributedStringKey.foregroundColor: textColor,
-        NSAttributedStringKey.backgroundColor: backgroundColor,
-        NSAttributedStringKey.paragraphStyle: paragraph
+        NSAttributedString.Key.font: UIFont.ionicon(of: fontSize),
+        NSAttributedString.Key.foregroundColor: textColor,
+        NSAttributedString.Key.backgroundColor: backgroundColor,
+        NSAttributedString.Key.paragraphStyle: paragraph
       ]
     )
 
