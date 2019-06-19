@@ -10,7 +10,7 @@ public extension UIFont {
   ///
   /// - parameter size: The preferred font size.
   /// - returns: A UIFont object of Ionicons.
-  public class func ionicon(of size: CGFloat) -> UIFont {
+  class func ionicon(of size: CGFloat) -> UIFont {
     let name = "ionicons"
     if UIFont.fontNames(forFamilyName: name).isEmpty {
       FontLoader.load(name)
@@ -27,7 +27,7 @@ public extension String {
   ///
   /// - parameter name: The preferred icon name.
   /// - returns: A string that will appear as icon with Ionicons.
-  public static func ionicon(with name: Ionicons) -> String {
+  static func ionicon(with name: Ionicons) -> String {
     let substr = name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)]
     return String(substr)
 
@@ -45,7 +45,7 @@ public extension UIImage {
   /// - parameter size: The image size.
   /// - parameter backgroundColor: The background color (optional).
   /// - returns: A string that will appear as icon with Ionicons
-  public static func ionicon(with name: Ionicons,
+  static func ionicon(with name: Ionicons,
                              textColor: UIColor,
                              size: CGSize,
                              backgroundColor: UIColor = UIColor.clear) -> UIImage {
@@ -56,10 +56,10 @@ public extension UIImage {
     let attributedString = NSAttributedString(
       string: String.ionicon(with: name),
       attributes: [
-        NSAttributedStringKey.font: UIFont.ionicon(of: fontSize),
-        NSAttributedStringKey.foregroundColor: textColor,
-        NSAttributedStringKey.backgroundColor: backgroundColor,
-        NSAttributedStringKey.paragraphStyle: paragraph
+        NSAttributedString.Key.font: UIFont.ionicon(of: fontSize),
+        NSAttributedString.Key.foregroundColor: textColor,
+        NSAttributedString.Key.backgroundColor: backgroundColor,
+        NSAttributedString.Key.paragraphStyle: paragraph
       ]
     )
 

@@ -1,7 +1,7 @@
 # IoniconsKit
 
 [![CI Status](http://img.shields.io/travis/keitaoouchi/IoniconsKit.svg?style=flat)](https://travis-ci.org/keitaoouchi/IoniconsKit)
-[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://swift.org/)
+[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![License](https://img.shields.io/cocoapods/l/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
@@ -37,10 +37,8 @@ or build Example App.
 
 | Target            | Version |
 |-------------------|---------|
-| iOS               |  => 8.0 |
-| Swift             |  => 4.0 |
-
-For Swift3.X, please use [v0.1.1](https://github.com/keitaoouchi/IoniconsKit/releases/tag/0.1.1).
+| iOS               |  => 10.0 |
+| Swift             |  => 5.0 |
 
 ## Installation
 
