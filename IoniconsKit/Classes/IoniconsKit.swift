@@ -1,3 +1,4 @@
+#if canImport(UIKit)
 import UIKit
 import CoreText
 
@@ -11,11 +12,10 @@ public extension UIFont {
   /// - parameter size: The preferred font size.
   /// - returns: A UIFont object of Ionicons.
   class func ionicon(of size: CGFloat) -> UIFont {
-    let name = "ionicons"
+    let name = "Ionicons"
     if UIFont.fontNames(forFamilyName: name).isEmpty {
-      FontLoader.load(name)
+      FontLoader.loadIfNeeded()
     }
-
     return UIFont(name: name, size: size)!
   }
 }
@@ -30,7 +30,6 @@ public extension String {
   static func ionicon(with name: Ionicons) -> String {
     let substr = name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)]
     return String(substr)
-
   }
 
 }
@@ -44,63 +43,86 @@ public extension UIImage {
   /// - parameter textColor: The text color.
   /// - parameter size: The image size.
   /// - parameter backgroundColor: The background color (optional).
-  /// - returns: A string that will appear as icon with Ionicons
-  static func ionicon(with name: Ionicons,
-                             textColor: UIColor,
-                             size: CGSize,
-                             backgroundColor: UIColor = UIColor.clear) -> UIImage {
-
+  /// - returns: A UIImage rendered with the specified Ionicons icon.
+  static func ionicon(
+    with name: Ionicons,
+    textColor: UIColor,
+    size: CGSize,
+    backgroundColor: UIColor = .clear
+  ) -> UIImage {
     let paragraph = NSMutableParagraphStyle()
-    paragraph.alignment = NSTextAlignment.center
+    paragraph.alignment = .center
     let fontSize = min(size.width, size.height)
     let attributedString = NSAttributedString(
       string: String.ionicon(with: name),
       attributes: [
-        NSAttributedString.Key.font: UIFont.ionicon(of: fontSize),
-        NSAttributedString.Key.foregroundColor: textColor,
-        NSAttributedString.Key.backgroundColor: backgroundColor,
-        NSAttributedString.Key.paragraphStyle: paragraph
+        .font: UIFont.ionicon(of: fontSize),
+        .foregroundColor: textColor,
+        .backgroundColor: backgroundColor,
+        .paragraphStyle: paragraph
       ]
     )
 
-    UIGraphicsBeginImageContextWithOptions(size, false , 0.0)
-    attributedString.draw(in:
-      CGRect(
+    let renderer = UIGraphicsImageRenderer(size: size)
+    return renderer.image { _ in
+      attributedString.draw(in: CGRect(
         x: 0,
         y: (size.height - fontSize) / 2,
         width: size.width,
         height: fontSize
-      )
-    )
-    let image = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext()
-
-    return image!
+      ))
+    }
   }
 
 }
 
 // MARK: - Private
 
-private class FontLoader {
+internal enum FontLoader {
 
-  class func load(_ name: String) {
-    let bundle = Bundle(for: FontLoader.self)
-    let fontURL: URL? =
-      bundle.url(forResource: name, withExtension: "ttf") ??
-      bundle.url(forResource: name, withExtension: "ttf", subdirectory: "IoniconsKit.bundle")
+  static func loadIfNeeded() {
+    let fontName = "Ionicons"
+    guard UIFont.fontNames(forFamilyName: fontName).isEmpty else { return }
+    load(resourceName: "ionicons")
+  }
 
-    let data = try! Data(contentsOf: fontURL!)
+  private static func load(resourceName name: String) {
+    let bundle = fontBundle()
+    guard let fontURL = bundle.url(forResource: name, withExtension: "ttf") else {
+      assertionFailure("IoniconsKit: Could not find ionicons.ttf in bundle \(bundle)")
+      return
+    }
 
-    let provider = CGDataProvider(data: data as CFData)!
-    let font = CGFont(provider)!
+    guard let data = try? Data(contentsOf: fontURL),
+          let provider = CGDataProvider(data: data as CFData),
+          let font = CGFont(provider) else {
+      assertionFailure("IoniconsKit: Failed to load font data from \(fontURL)")
+      return
+    }
 
     var error: Unmanaged<CFError>?
     if !CTFontManagerRegisterGraphicsFont(font, &error) {
-      let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
-      let nsError = error!.takeUnretainedValue() as AnyObject as! NSError
-      NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+      // Font may already be registered; ignore the error
+      error?.release()
     }
   }
 
+  private static func fontBundle() -> Bundle {
+#if SWIFT_PACKAGE
+    return Bundle.module
+#else
+    let classBundle = Bundle(for: _IoniconsKitMarker.self)
+    // CocoaPods resource bundle
+    if let url = classBundle.url(forResource: "IoniconsKit", withExtension: "bundle"),
+       let resourceBundle = Bundle(url: url) {
+      return resourceBundle
+    }
+    return classBundle
+#endif
+  }
 }
+
+// Used as an anchor for Bundle(for:) in CocoaPods builds
+private final class _IoniconsKitMarker {}
+
+#endif

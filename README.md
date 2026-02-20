@@ -1,69 +1,99 @@
 # IoniconsKit
 
-[![CI Status](http://img.shields.io/travis/keitaoouchi/IoniconsKit.svg?style=flat)](https://travis-ci.org/keitaoouchi/IoniconsKit)
-[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-orange.svg?style=flat)](https://swift.org/)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Swift 5.5](https://img.shields.io/badge/Swift-5.5-orange.svg?style=flat)](https://swift.org/)
 [![Version](https://img.shields.io/cocoapods/v/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![License](https://img.shields.io/cocoapods/l/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![Platform](https://img.shields.io/cocoapods/p/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
+[![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 
-<img src="https://raw.githubusercontent.com/keitaoouchi/IoniconsKit/master/Screenshots/sample.png" width="320px" />
+> Ionicons v4 (696 icons) for UIKit and SwiftUI with type-safe Swift enums.
 
-> IoniconsKit internally use ionicons.ttf v2.0.1
+## Usage
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-### Ionicons as UILabel
+### SwiftUI
 
 ```swift
+import IoniconsKit
+import SwiftUI
+
+// Standalone icon view
+IoniconView(.iosHome)
+IoniconView(.mdSettings, color: .blue, size: 32)
+
+// As a SwiftUI Image
+Image.ionicon(with: .iosCamera, color: .systemOrange, size: 24)
+
+// Label modifier
+Text("Settings")
+    .ioniconLabel(.mdSettings, color: .gray, size: 18)
+```
+
+### UIKit
+
+```swift
+import IoniconsKit
+
+// As UIFont in a UILabel
 someLabel.font = UIFont.ionicon(of: 18)
-someLabel.text = String.ionicon(with: .socialTwitter)
+someLabel.text = String.ionicon(with: .iosHome)
+
+// As UIImage
+someImageView.image = UIImage.ionicon(
+    with: .mdCamera,
+    textColor: .systemOrange,
+    size: CGSize(width: 24, height: 24)
+)
 ```
 
-### Ionicons as UIImage
+### Icon Names
 
-```swift
-someImageView.image = UIImage.ionicon(with: .socialFacebook, textColor: UIColor.orange, size: CGSize(width: 18, height: 18))
-```
+Ionicons v4 icons use `ios` and `md` prefixes:
+- `.iosHome`, `.iosSettings`, `.iosCamera` — iOS-style icons
+- `.mdHome`, `.mdSettings`, `.mdCamera` — Material Design-style icons
 
-For another icons, plaease see the [source](https://github.com/keitaoouchi/IoniconsKit/blob/master/IoniconsKit/Classes/Ionicons.swift),
-or build Example App.
-
-
+For the full icon list, see [Ionicons v4](https://ionic.io/ionicons/v4) or browse
+[`Ionicons.swift`](IoniconsKit/Classes/Ionicons.swift).
 
 ## Requirements
 
-| Target            | Version |
-|-------------------|---------|
-| iOS               |  => 10.0 |
-| Swift             |  => 5.0 |
+| Target | Version |
+|--------|---------|
+| iOS    | >= 13.0 |
+| macOS  | >= 10.15 |
+| Swift  | >= 5.5 |
 
 ## Installation
 
-IoniconsKit is available through [CocoaPods](http://cocoapods.org) or [Carthage](https://github.com/Carthage/Carthage).
+### Swift Package Manager
+
+```swift
+// Package.swift
+.package(url: "https://github.com/keitaoouchi/IoniconsKit.git", from: "2.0.0")
+```
+
+Or add via Xcode: **File → Add Packages…** and enter the repository URL.
 
 ### CocoaPods
 
 ```ruby
-pod "IoniconsKit"
+pod 'IoniconsKit', '~> 2.0'
 ```
 
-### Carthage
+## Migration from v1.x
 
-```
-github "keitaoouchi/IoniconsKit"
-```
+Version 2.0 updates to Ionicons v4, which renames all icons to use `ios` and `md` prefixes:
 
-for detail, please follow the [Carthage Instruction](https://github.com/Carthage/Carthage#if-youre-building-for-ios-tvos-or-watchos)
+| v1.x | v2.x |
+|------|------|
+| `.home` | `.iosHome` / `.mdHome` |
+| `.settings` | `.iosSettings` / `.mdSettings` |
+| `.socialTwitter` | `.logoTwitter` |
 
-## Author
-
-keita.oouchi, keita.oouchi@gmail.com
+SwiftUI support and Swift Package Manager support are also new in v2.0.
 
 ## License
 
-[ionicons.ttf](http://ionicons.com/) file is licensed under [MIT license](https://github.com/driftyco/ionicons/blob/master/LICENSE).
+[ionicons.ttf](https://ionic.io/ionicons) is licensed under the
+[MIT License](https://github.com/ionic-team/ionicons/blob/main/LICENSE).
 
 IoniconsKit is available under the MIT license. See the LICENSE file for more info.
