@@ -95,15 +95,16 @@ internal enum FontLoader {
 
     guard let data = try? Data(contentsOf: fontURL),
           let provider = CGDataProvider(data: data as CFData),
-          let font = CGFont(provider) else {
+          let _ = CGFont(provider) else {
       assertionFailure("IoniconsKit: Failed to load font data from \(fontURL)")
       return
     }
 
-    var error: Unmanaged<CFError>?
-    if !CTFontManagerRegisterGraphicsFont(font, &error) {
-      // Font may already be registered; ignore the error
-      error?.release()
+    // Register the font by URL for modern platforms
+    let success = CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+    if !success {
+      // If registration fails, it's often because it's already registered; ignore
+      // but you could log here if needed.
     }
   }
 
@@ -126,3 +127,4 @@ internal enum FontLoader {
 private final class _IoniconsKitMarker {}
 
 #endif
+

@@ -1,12 +1,14 @@
 # IoniconsKit
 
-[![Swift 5.5](https://img.shields.io/badge/Swift-5.5-orange.svg?style=flat)](https://swift.org/)
+[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://swift.org/)
 [![Version](https://img.shields.io/cocoapods/v/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![License](https://img.shields.io/cocoapods/l/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![Platform](https://img.shields.io/cocoapods/p/IoniconsKit.svg?style=flat)](http://cocoapods.org/pods/IoniconsKit)
 [![SPM compatible](https://img.shields.io/badge/SPM-compatible-4BC51D.svg?style=flat)](https://swift.org/package-manager/)
 
 > Ionicons v4 (696 icons) for UIKit and SwiftUI with type-safe Swift enums.
+
+<img src="https://raw.githubusercontent.com/keitaoouchi/IoniconsKit/master/Screenshots/sample.png" width="320px" />
 
 ## Usage
 
@@ -58,9 +60,9 @@ For the full icon list, see [Ionicons v4](https://ionic.io/ionicons/v4) or brows
 
 | Target | Version |
 |--------|---------|
-| iOS    | >= 13.0 |
+| iOS    | >= 18.0 |
 | macOS  | >= 10.15 |
-| Swift  | >= 5.5 |
+| Swift  | >= 6.0 |
 
 ## Installation
 

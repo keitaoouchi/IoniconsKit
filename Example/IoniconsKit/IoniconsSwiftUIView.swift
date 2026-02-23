@@ -2,14 +2,20 @@ import SwiftUI
 import IoniconsKit
 
 /// A SwiftUI example view that demonstrates IoniconView usage.
-@available(iOS 13.0, *)
 struct IoniconsSwiftUIView: View {
 
-    private let items: [(String, Ionicons)] = Ionicons.tuples
+    @State private var searchText = ""
+
+    private var filteredItems: [(String, Ionicons)] {
+        if searchText.isEmpty {
+            return Ionicons.tuples
+        }
+        return Ionicons.tuples.filter { $0.0.localizedCaseInsensitiveContains(searchText) }
+    }
 
     var body: some View {
-        NavigationView {
-            List(items, id: \.0) { name, icon in
+        NavigationStack {
+            List(filteredItems, id: \.0) { name, icon in
                 HStack(spacing: 16) {
                     IoniconView(icon, color: .accentColor, size: 24)
                         .frame(width: 32, height: 32)
@@ -17,14 +23,12 @@ struct IoniconsSwiftUIView: View {
                         .font(.system(.body, design: .monospaced))
                 }
             }
-            .navigationTitle("Ionicons v4")
+            .navigationTitle("SwiftUI")
+            .searchable(text: $searchText, prompt: "Search icons")
         }
     }
 }
 
-@available(iOS 13.0, *)
-struct IoniconsSwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        IoniconsSwiftUIView()
-    }
+#Preview {
+    IoniconsSwiftUIView()
 }
