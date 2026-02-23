@@ -5,9 +5,7 @@ let package = Package(
     name: "IoniconsKit",
     platforms: [
         .iOS(.v18),
-        .macOS(.v26),
-        .tvOS(.v18),
-        .watchOS(.v11)
+        .macOS(.v26)
     ],
     products: [
         .library(
