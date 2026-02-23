@@ -1,13 +1,13 @@
-// swift-tools-version:5.3
+// swift-tools-version:6.2
 import PackageDescription
 
 let package = Package(
     name: "IoniconsKit",
     platforms: [
-        .iOS(.v13),
-        .macOS(.v10_15),
-        .tvOS(.v13),
-        .watchOS(.v6)
+        .iOS(.v18),
+        .macOS(.v26),
+        .tvOS(.v18),
+        .watchOS(.v11)
     ],
     products: [
         .library(
@@ -25,5 +25,5 @@ let package = Package(
             ]
         )
     ],
-    swiftLanguageVersions: [.v5]
+    swiftLanguageModes: [.v6]
 )

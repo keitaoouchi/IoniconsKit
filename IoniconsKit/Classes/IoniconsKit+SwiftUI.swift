@@ -14,7 +14,7 @@ import UIKit
 /// IoniconView(.iosHome)
 /// IoniconView(.mdSettings, color: .blue, size: 32)
 /// ```
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 18.0, macOS 26.0, tvOS 18.0, watchOS 11.0, *)
 public struct IoniconView: View {
 
   private let icon: Ionicons
@@ -31,9 +31,7 @@ public struct IoniconView: View {
     self.icon = icon
     self.color = color
     self.size = size
-#if canImport(UIKit)
     FontLoader.loadIfNeeded()
-#endif
   }
 
   public var body: some View {
@@ -47,7 +45,7 @@ public struct IoniconView: View {
 // MARK: - Image Extension (UIKit only)
 
 #if canImport(UIKit)
-@available(iOS 13.0, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 18.0, tvOS 18.0, watchOS 11.0, *)
 public extension Image {
 
   /// Creates a SwiftUI Image from an Ionicons icon.
@@ -70,7 +68,7 @@ public extension Image {
 
 // MARK: - View Modifier
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 18.0, macOS 26.0, tvOS 18.0, watchOS 11.0, *)
 public struct IoniconLabelModifier: ViewModifier {
 
   private let icon: Ionicons
@@ -92,7 +90,7 @@ public struct IoniconLabelModifier: ViewModifier {
   }
 }
 
-@available(iOS 13.0, macOS 10.15, tvOS 13.0, watchOS 6.0, *)
+@available(iOS 18.0, macOS 26.0, tvOS 18.0, watchOS 11.0, *)
 public extension View {
 
   /// Wraps the view in a SwiftUI Label with an Ionicons icon.

@@ -41,7 +41,7 @@ class SwiftGen
 //
 // Use generate.rb to generate when ionicons.txt is updated
 //
-public enum Ionicons: String {
+public enum Ionicons: String, CaseIterable {
     #{@icons.map(&:code_for_enum_definition).join("\n    ")}
 }
 SWIFT

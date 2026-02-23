@@ -1,8 +1,26 @@
-#if canImport(UIKit)
-import UIKit
+import Foundation
 import CoreText
 
-// MARK: - Public
+// MARK: - String (cross-platform)
+
+/// A Ionicons extension to String.
+public extension String {
+
+  /// Get a Ionicons icon string with the given icon name.
+  ///
+  /// - parameter name: The preferred icon name.
+  /// - returns: A string that will appear as icon with Ionicons.
+  static func ionicon(with name: Ionicons) -> String {
+    let substr = name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)]
+    return String(substr)
+  }
+
+}
+
+// MARK: - UIKit
+
+#if canImport(UIKit)
+import UIKit
 
 /// A Ionicons extension to UIFont.
 public extension UIFont {
@@ -18,20 +36,6 @@ public extension UIFont {
     }
     return UIFont(name: name, size: size)!
   }
-}
-
-/// A Ionicons extension to String.
-public extension String {
-
-  /// Get a Ionicons icon string with the given icon name.
-  ///
-  /// - parameter name: The preferred icon name.
-  /// - returns: A string that will appear as icon with Ionicons.
-  static func ionicon(with name: Ionicons) -> String {
-    let substr = name.rawValue[..<name.rawValue.index(name.rawValue.startIndex, offsetBy: 1)]
-    return String(substr)
-  }
-
 }
 
 /// A Ionicons extension to UIImage.
@@ -75,14 +79,17 @@ public extension UIImage {
   }
 
 }
+#endif
 
-// MARK: - Private
+// MARK: - FontLoader (cross-platform, CoreText-based)
 
 internal enum FontLoader {
 
+  // CTFontManagerRegisterFontsForURL is thread-safe; duplicate calls are benign.
+  nonisolated(unsafe) private static var isLoaded = false
+
   static func loadIfNeeded() {
-    let fontName = "Ionicons"
-    guard UIFont.fontNames(forFamilyName: fontName).isEmpty else { return }
+    guard !isLoaded else { return }
     load(resourceName: "ionicons")
   }
 
@@ -100,12 +107,8 @@ internal enum FontLoader {
       return
     }
 
-    // Register the font by URL for modern platforms
-    let success = CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
-    if !success {
-      // If registration fails, it's often because it's already registered; ignore
-      // but you could log here if needed.
-    }
+    CTFontManagerRegisterFontsForURL(fontURL as CFURL, .process, nil)
+    isLoaded = true
   }
 
   private static func fontBundle() -> Bundle {
@@ -125,6 +128,3 @@ internal enum FontLoader {
 
 // Used as an anchor for Bundle(for:) in CocoaPods builds
 private final class _IoniconsKitMarker {}
-
-#endif
-

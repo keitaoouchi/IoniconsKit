@@ -2,7 +2,7 @@ import UIKit
 import SwiftUI
 import IoniconsKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?

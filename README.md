@@ -10,6 +10,9 @@
 
 <img src="https://raw.githubusercontent.com/keitaoouchi/IoniconsKit/master/Screenshots/sample.png" width="320px" />
 
+<img src="https://raw.githubusercontent.com/keitaoouchi/IoniconsKit/master/Screenshots/mac_sample.png" width="640px" />
+
+
 ## Usage
 
 ### SwiftUI
@@ -58,11 +61,13 @@ For the full icon list, see [Ionicons v4](https://ionic.io/ionicons/v4) or brows
 
 ## Requirements
 
-| Target | Version |
-|--------|---------|
-| iOS    | >= 18.0 |
-| macOS  | >= 10.15 |
-| Swift  | >= 6.0 |
+| Target  | Version |
+|---------|---------|
+| iOS     | >= 18.0 |
+| macOS   | >= 26.0 |
+| tvOS    | >= 18.0 |
+| watchOS | >= 11.0 |
+| Swift   | >= 6.0  |
 
 ## Installation
 

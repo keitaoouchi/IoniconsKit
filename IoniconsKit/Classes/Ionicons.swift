@@ -3,7 +3,7 @@
 //
 // Use generate.rb to generate when ionicons.txt is updated
 //
-public enum Ionicons: String {
+public enum Ionicons: String, CaseIterable {
     case iosAdd = "\u{f102}"
     case iosAddCircle = "\u{f101}"
     case iosAddCircleOutline = "\u{f100}"
