@@ -12,6 +12,7 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
+		D712241E2F4C2827000ABE00 /* IoniconsSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D712241D2F4C2827000ABE00 /* IoniconsSwiftUIView.swift */; };
 		DE157C7D1D8CF24A003C841F /* IoniconsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C7C1D8CF24A003C841F /* IoniconsTableViewController.swift */; };
 		DE157C7F1D8CF267003C841F /* IoniconTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C7E1D8CF267003C841F /* IoniconTableViewCell.swift */; };
 		DE157C851D8D0170003C841F /* Ionicons.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE157C841D8D0170003C841F /* Ionicons.swift */; };
@@ -28,6 +29,7 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		B7C9DC051E83D950525F3CC6 /* IoniconsKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IoniconsKit.podspec; path = ../IoniconsKit.podspec; sourceTree = "<group>"; };
 		D53428A01AD7379D18694967 /* libPods-IoniconsKit_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IoniconsKit_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D712241D2F4C2827000ABE00 /* IoniconsSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoniconsSwiftUIView.swift; sourceTree = "<group>"; };
 		DA273FDEB5111C9963CA02F8 /* Pods-IoniconsKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IoniconsKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IoniconsKit_Example/Pods-IoniconsKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		DE157C7C1D8CF24A003C841F /* IoniconsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoniconsTableViewController.swift; sourceTree = "<group>"; };
 		DE157C7E1D8CF267003C841F /* IoniconTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IoniconTableViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 		607FACD21AFB9204008FA782 /* Example for IoniconsKit */ = {
 			isa = PBXGroup;
 			children = (
+				D712241D2F4C2827000ABE00 /* IoniconsSwiftUIView.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
@@ -158,10 +161,9 @@
 			};
 			buildConfigurationList = 607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "IoniconsKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -235,6 +237,7 @@
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				DE157C7F1D8CF267003C841F /* IoniconTableViewCell.swift in Sources */,
 				DE157C7D1D8CF24A003C841F /* IoniconsTableViewController.swift in Sources */,
+				D712241E2F4C2827000ABE00 /* IoniconsSwiftUIView.swift in Sources */,
 				DE157C851D8D0170003C841F /* Ionicons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,12 +312,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -359,11 +362,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -373,13 +376,17 @@
 			baseConfigurationReference = DA273FDEB5111C9963CA02F8 /* Pods-IoniconsKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IoniconsKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -388,13 +395,17 @@
 			baseConfigurationReference = 579B2CB93371F5D58B1E306B /* Pods-IoniconsKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = IoniconsKit/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 6.0;
 			};
 			name = Release;
 		};

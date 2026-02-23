@@ -1,6 +1,13 @@
 # OS X
 .DS_Store
 
+# Swift Package Manager
+.build/
+**/.swiftpm/
+
+# Claude Code
+.claude/
+
 # Xcode
 build/
 *.pbxuser

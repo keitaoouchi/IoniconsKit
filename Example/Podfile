@@ -1,5 +1,5 @@
 use_modular_headers!
-platform :ios, '10.0'
+platform :ios, '18.0'
 
 target 'IoniconsKit_Example' do
   pod 'IoniconsKit', :path => '../'
